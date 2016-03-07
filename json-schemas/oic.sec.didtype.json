@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.sec.didtype.json#",
+  "title": "Device Identifier Format type",
+  "definitions": {
+    "oic.sec.didtype": {
+      "description": "Device identifier formats are enumerated",
+      "properties": {
+        "idt": {
+          "type": "string",
+          "enum": [ "0" ],
+          "description": "0 - Format type enumeration for RFC4122"
+        },
+        "id": {
+          "oneOf": [
+            {
+              "type": "string",
+              "format": "uuid",
+              "description": "A UUID value"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+      { "$ref": "#/definitions/oic.sec.didtype" }
+  ],
+  "required": ["idt","id"]
+}

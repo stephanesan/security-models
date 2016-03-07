@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.cred.json#",
+  "title": "Device Credentials information",
+  "definitions": {
+    "oic.r.cred": {
+      "type": "object",
+      "properties": {
+        "creds": {
+          "type": "array",
+          "description": "List of credentials available at this resource",
+          "items": {
+            "$ref": "oic.sec.cred.json"
+          }
+        },
+        "rowner": {
+          "type": "array",
+          "description": "Entries in /oic/sec/svc resource that own this resource",
+          "items": {
+            "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.cred" }
+  ],
+  "required": [ "creds", "rowner" ]
+}

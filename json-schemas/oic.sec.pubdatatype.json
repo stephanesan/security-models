@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.sec.pubdatatype.json",
+  "title": "Public Credential data",
+  "definitions": {
+    "oic.sec.pubdatatype": {
+      "type": "object",
+      "properties": {
+        "encoding": {
+          "type": "string",
+          "enum": [ "oic.sec.encoding.jwt", "oic.sec.encoding.cwt", "oic.sec.encoding.base64", "oic.sec.encoding.uri" ],
+          "description": "A string specifying the encoding format of the data contained in the pubdata",
+          "detail-desc": [  "oic.sec.encoding.jwt - RFC7517 JSON web token (JWT) encoding",
+                            "oic.sec.encoding.cwt - RFC CBOR web token (CWT) encoding",
+                            "oic.sec.encoding.base64 - Base64 encoded object",
+                            "oic.sec.encoding.uri - URI reference" ]
+        },
+        "pubdata": {
+          "type": "string",
+          "description": "The encoded value"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.sec.pubdatatype" }
+  ]
+}

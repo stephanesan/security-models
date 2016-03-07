@@ -1,0 +1,74 @@
+{
+  "creds": [
+    {
+      "credid": 55,
+      "subjectid": {
+        "idt": "0",
+        "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
+      },
+      "roleid": {
+        "rl": {
+          "authority": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
+          "roles": [
+            "SOME_STRING", "SOME_STRING"
+          ]
+        }
+      },
+      "credtype": {
+        "bitmask": "111111"
+      },
+      "publicdata": {
+        "encoding": "oic.sec.encoding.base64",
+        "pubdata": "BASE-64-ENCODED-VALUE"
+      },
+      "privatedata": {
+        "encoding": "oic.sec.encoding.base64",
+        "privdata": "BASE-64-ENCODED-VALUE",
+        "handle": 4
+      },
+      "optionaldata": {
+        "revstat": false,
+        "encoding": "oic.sec.encoding.base64",
+        "optdata": "BASE-64-ENCODED-VALUE"
+      },
+      "period": "20160101T180000Z/20170102T070000Z",
+      "crms": [ "oic.sec.crm.pk10" ]
+    },
+
+    {
+      "credid": 55,
+      "subjectid": {
+        "idt": "0",
+        "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
+      },
+      "roleid": {
+        "rl": {
+          "authority": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
+          "roles": [
+            "SOME_STRING", "SOME_STRING"
+          ]
+        }
+      },
+      "credtype": {
+        "bitmask": "000001"
+      },
+      "publicdata": {
+        "encoding": "oic.sec.encoding.base64",
+        "pubdata": "BASE-64-ENCODED-VALUE"
+      },
+      "privatedata": {
+        "encoding": "oic.sec.encoding.base64",
+        "privdata": "BASE-64-ENCODED-VALUE",
+        "handle": 4
+      },
+      "optionaldata": {
+        "revstat": false,
+        "encoding": "oic.sec.encoding.base64",
+        "optdata": "BASE-64-ENCODED-VALUE"
+      },
+      "period": "20160101T180000Z/20170102T070000Z",
+      "crms": [ "oic.sec.crm.pk10" ]
+    }
+  ],
+  "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+}

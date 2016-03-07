@@ -1,0 +1,5 @@
+{
+  "encoding": "oic.sec.encoding.base64",
+  "privdata": "BASE-64-ENCODED-VALUE",
+  "handle": 4
+}
