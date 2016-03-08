@@ -1,0 +1,32 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.amacl.json#",
+  "title": "Managed Access Control information",
+  "definitions": {
+    "oic.r.amacl": {
+      "type": "object",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "description": "Multiple links to this host's resources",
+          "items": { "$ref": "oic.oic-link.json" }
+        },
+        "ams":   {
+          "type": "array",
+          "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
+          "items": { "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items" }
+        },
+        "rowner":   {
+          "type": "array",
+          "description": "Entries in oic.sec.svc resource that own this resource",
+          "items": { "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items" }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.amacl" }
+  ],
+  "required": [ "resources", "ams", "rowner"]
+}

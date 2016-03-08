@@ -1,0 +1,18 @@
+{
+  "resources": [
+    {
+      "href": "coaps://IP-ADDR/temp",
+      "rel": "some-rel",
+      "rt": "oic.r.temperature",
+      "if": "oic.if.a"
+    },
+    {
+      "href": "coaps://IP-ADDR/temp",
+      "rel": "some-rel",
+      "rt": "oic.r.temperature",
+      "if": "oic.if.s"
+    }
+  ],
+  "ams": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ],
+  "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+}
