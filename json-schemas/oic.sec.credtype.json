@@ -10,14 +10,12 @@
         "bitmask": {
           "type": "string",
           "pattern": "^[01]{6}$",
-          "description": "Each bitmask encodes a specific type of credential",
+          "description": "Cred type ",
           "detail-desc": [  "0 - Empty credential used for testing",
                             "1 - Symmetric pair-wise key",
                             "2 - Symmetric group key",
                             "4 - Asymmetric signing key",
                             "8 - Asymmetric signing key with certificate",
-                            "10 - DER encoded Root CA Certificate to be installed in the trust store",
-                            "12 - PEM encoded certifiate chain with certificate for the device",
                             "16 - PIN or password",
                             "32 - Asymmetric encryption key" ]
         }
