@@ -1,0 +1,20 @@
+{
+  "isop": true,
+  "cm": {
+    "bitmask": "00111110"
+  },
+  "tm": {
+    "bitmask": "00000000"
+  },
+  "om": {
+    "bitmask": "00000010"
+  },
+  "sm": {
+    "bitmask": "00000111"
+  },
+  "devid": {
+    "idt": "0",
+    "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
+  },
+  "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+}

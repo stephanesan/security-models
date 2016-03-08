@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.pstat.json#",
+  "title": "Device Provisioning Status information",
+  "definitions": {
+    "oic.r.pstat": {
+      "type": "object",
+      "properties": {
+        "isop":  {
+          "type": "boolean",
+          "description": "true indicates device is operational"
+        },
+        "cm":   {
+          "type": "object",
+          "description": "Current device provisioning mode",
+          "$ref": "oic.sec.dpmtype.json"
+        },
+        "tm": {
+          "type": "object",
+          "description": "Target device provisioning mode",
+          "$ref": "oic.sec.dpmtype.json"
+        },
+        "om": {
+          "type": "object",
+          "description": "Current operational mode",
+          "$ref": "oic.sec.pomtype.json"
+        },
+        "sm": {
+          "type": "object",
+          "description": "Suppported operational modes",
+          "$ref": "oic.sec.pomtype.json"
+        },
+        "devid":   {
+          "type": "object",
+          "description": "The device to which the status applies. NULL refers to this device.",
+          "$ref": "oic.sec.didtype.json"
+        },
+        "rowner": {
+          "type": "array",
+          "description": "Entries in /oic/sec/svc resource that own this resource",
+          "items": {
+            "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.pstat" }
+  ],
+  "required": [ "isop", "cm", "om", "sm" ]
+}

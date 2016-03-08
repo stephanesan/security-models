@@ -1,0 +1,67 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.sec.ace.json#",
+  "title": "Subject based Access Control Entry (ACE) object definition",
+  "definitions": {
+    "time-interval": {
+      "type": "array",
+      "description": "The time-interval is a array of objects where each object is a tuple of period and recurrence",
+      "items": [
+        {
+          "type": "string",
+          "description": "String represents a period using the RFC5545 Period"
+        },
+        {
+          "type": "array",
+          "description": "String array represents a recurrence rule using the RFC5545 Recurrence",
+          "items": {
+            "type": "string"
+          }
+        }
+      ]
+    },
+    "oic.sec.ace": {
+      "type": "object",
+      "properties": {
+        "subject": {
+          "description": "The subject to whom this ace applies, either a deviceId or a role",
+          "anyOf": [
+            {
+              "$ref": "oic.sec.didtype.json"
+            },
+            {
+              "$ref": "oic.sec.roletype.json"
+            }
+          ]
+        },
+        "resources": {
+          "type": "array",
+          "description": "References the application's resources to which a security policy applies",
+          "items": { "$ref": "oic.oic-link.json" }
+        },
+        "permission": {
+          "type": "object",
+          "description": "Bitmask encoding of CRUDN permission",
+          "$ref": "oic.sec.crudntype.json"
+        },
+        "validity": {
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/time-interval"
+          }
+        }
+      },
+      "required": ["subject", "resources", "permission"]
+    }
+  },
+  "type": "object",
+  "properties": {
+    "aces": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/oic.sec.ace"
+      }
+    }
+  },
+  "required":["aces"]
+}

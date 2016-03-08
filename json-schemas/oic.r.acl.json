@@ -1,0 +1,29 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.acl.json#",
+  "title": "Access Control List information",
+  "definitions": {
+    "oic.r.acl": {
+      "type": "object",
+      "properties": {
+        "acl":  {
+          "type": "object",
+          "description": "Access Control Entries in the Acl resource",
+          "$ref": "oic.sec.ace.json"
+        },
+        "rowner":   {
+          "type": "array",
+          "description": "Entries in oic.sec.svc resource that own this resource",
+          "items": {
+            "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items"
+          }
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.acl" }
+  ],
+  "required": ["acl","rowner"]
+}
