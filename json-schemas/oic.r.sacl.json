@@ -1,0 +1,33 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.sacl.json#",
+  "title": "Signed Access Control List information",
+  "definitions": {
+    "oic.r.sacl": {
+      "type": "object",
+      "properties": {
+        "acl":  {
+          "type": "object",
+          "description": "Access Control Entries in the Acl resource",
+          "$ref": "oic.sec.ace.json"
+        },
+        "signature":   {
+          "type": "object",
+          "description": "The signature over the ACL resource",
+          "$ref": "oic.sec.sigtype.json"
+        },
+        "ams":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
+          "$ref": "oic.sec.svctype.json"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.sacl" }
+  ],
+  "required": ["acl", "signature", "ams"],
+  "additionalItems": false
+}
