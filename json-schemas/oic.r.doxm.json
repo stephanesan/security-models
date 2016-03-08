@@ -1,0 +1,53 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "http://openinterconnect.org/schemas/oic.r.doxm.json#",
+  "title": "Device Owner Transfer Method information",
+  "definitions": {
+    "oic.r.doxm": {
+      "type": "object",
+      "properties": {
+        "oxms":  {
+          "type": "array",
+          "description": "List of supported owner transfer methods",
+          "items": {
+            "$ref": "oic.sec.doxmtype.json#/definitions/oic.sec.doxmtype/properties/oxm"
+          }
+        },
+        "oxmsel":   {
+          "type": "integer",
+          "description": "The selected owner transfer method used during on-boarding",
+          "$ref": "oic.sec.doxmtype.json#/definitions/oic.sec.doxmtype/properties/oxm"
+        },
+        "sct": {
+          "type": "object",
+          "description": "Bitmask encoding of supported credential types",
+          "$ref": "oic.sec.credtype.json"
+        },
+        "owned":   {
+          "type": "boolean",
+          "description": "Ownership status flag"
+        },
+        "deviceid":   {
+          "type": "object",
+          "description": "Post on-boarded device identier",
+          "$ref": "oic.sec.didtype.json"
+        },
+        "devowner":   {
+          "type": "object",
+          "description": "The service entity that performed the owner transfer method",
+          "$ref": "oic.sec.svctype.json"
+        },
+        "rowner":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that own this resource",
+          "$ref": "oic.sec.svctype.json"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "#/definitions/oic.r.doxm" }
+  ],
+  "required": [ "oxms", "oxmsel", "sct", "owned", "deviceid", "devowner", "rowner" ]
+}

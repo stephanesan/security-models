@@ -1,0 +1,18 @@
+{
+  "oxms": [ 0, 2, 3 ],
+  "oxmsel": 0,
+  "sct": {
+    "bitmask": "010000"
+  },
+  "owned": true,
+  "deviceid": {
+    "idt": "0",
+    "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
+  },
+  "devowner": {
+    "sl": ["oic.sec.svc.doxs"]
+  },
+  "rowner": {
+    "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+  }
+}
