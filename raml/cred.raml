@@ -1,0 +1,116 @@
+#%RAML 0.8
+title: OIC Security Credential Resource
+version: v1.0-20150819
+schemas:
+ - Cred: !include oic.sec.cred.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/oic/sec/cred:
+  description: |
+    This resource specifies credentials a device may used to establish secure communication.
+
+  displayName: Credential resource data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves public credential data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: cred
+            example: |
+              {
+              "rt": "oic.sec.cred",
+              "credid": 1,
+              "subject": "de305d54-75b4-431b-adb2-eb6b9e546014",
+              #"roleid": {"rl": [ "410645e9-b6be-2bda-b134-4b7545d503ed",["/admin"] ]},# this should be defined in spec in advance.
+              "credtype": 2,
+              "publicdata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "privatedata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "optionaldata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "period": "20150101T180000Z/20150102T070000Z",
+              #"crms": 32,#this should be discussed about the supported data type in spec
+              "rowner": ["oic.sec.svc.cms", "oic.sec.svc.doxs"]
+              }
+      400:
+        description: The request is invalid.
+
+  post:
+    description: |
+      Sets or updates credential data
+    body:
+      application/json:
+        schema: cred
+        example: |
+            {
+              "rt": "oic.sec.cred",
+              "credid": 1,
+              "subject": "de305d54-75b4-431b-adb2-eb6b9e546014",
+              #"roleid": {"rl": [ "410645e9-b6be-2bda-b134-4b7545d503ed",["/admin"] ]},# this should be defined in spec in advance.
+              "credtype": 2,
+              "publicdata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "privatedata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "optionaldata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "period": "20150101T180000Z/20150102T070000Z",
+              #"crms": 32,#this should be discussed about the supported data type in spec
+              "rowner": ["oic.sec.svc.cms", "oic.sec.svc.doxs"]
+              }
+    responses:
+      201:
+        description: The credential entry is created.
+      204:
+        description: The credential entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: Updates credential data
+    body:
+      application/json:
+        schema: cred
+        example: |
+           {
+              "rt": "oic.sec.cred",
+              "credid": 1,
+              "subject": "de305d54-75b4-431b-adb2-eb6b9e546014",
+              #"roleid": {"rl": [ "410645e9-b6be-2bda-b134-4b7545d503ed",["/admin"] ]},# this should be defined in spec in advance.
+              "credtype": 2,
+              "publicdata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "privatedata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "optionaldata": "BASE64DATA",#this should be discussed about the supported data type in spec
+              "period": "20150101T180000Z/20150102T070000Z",
+              #"crms": 32,#this should be discussed about the supported data type in spec
+              "rowner": ["oic.sec.svc.cms", "oic.sec.svc.doxs"]
+           }
+
+    responses:
+         201:
+            description: The credential entry is created.
+         400:
+            description: The request is invalid.
+
+  delete:
+      description: |
+        Deletes the credential data.
+        When DELETE is used without query parameters, the entire collection is deleted.
+        When DELETE uses a query value naming the subject, only the matched entry is deleted.
+      queryParameters:
+          subject:
+              type: string
+              description: |
+                Delete the credential identified by the string containing subjectID.
+              required: false
+              example: |
+                DELETE /mycred?subjectid="de305d54-75b4-431b-adb2-eb6b9e546014"
+      responses:
+        204:
+          description: The credential instance or the the entire credential resource has been successfully deleted.
+        400:
+          description: The request is invalid.

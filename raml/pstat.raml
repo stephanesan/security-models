@@ -1,0 +1,104 @@
+#%RAML 0.8
+title: OIC Security Pstat Resource
+version: v1.0-20150819
+schemas:
+  - Pstat: !include oic.sec.pstat.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/oic/sec/pstat:
+  description: |
+    This resource specifies device provisioning status.
+
+  displayName: Device Provisioning Status resource data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves device provisioning status data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: pstat
+            example: |
+              {
+              "rt":       "oic.sec.pstat",
+              "isop":     true,
+              "cm":       78,
+              "tm":       0,
+              "om":       2,
+              "sm":       7,
+              "deviceid":    "de305d54-75b4-431b-adb2-eb6b9e546014"
+              }
+      400:
+        description: The request is invalid.
+
+  post:
+    description: |
+      Sets or updates device provisioning status data.
+    body:
+      application/json:
+        schema: pstat
+        example: |
+          {
+              "rt":       "oic.sec.pstat",
+              "isop":     true,
+              "cm":       78,
+              "tm":       0,
+              "om":       2,
+              "sm":       7,
+              "deviceid":    "de305d54-75b4-431b-adb2-eb6b9e546014"
+           }
+    responses:
+      201:
+        description: The PSTAT entry is created.
+      204:
+        description: The PSTAT entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: |
+      Sets or updates device provisioning status data.
+    body:
+      application/json:
+        schema: pstat
+        example: |
+         {
+              "rt":       "oic.sec.pstat",
+              "isop":     true,
+              "cm":       78,
+              "tm":       0,
+              "om":       2,
+              "sm":       7,
+              "deviceid":    "de305d54-75b4-431b-adb2-eb6b9e546014"
+         }
+    responses:
+      201:
+        description: The PSTAT entry is created.
+      400:
+        description: The request is invalid.
+
+  delete:
+    description: |
+      Deletes the PSTAT data.
+      When DELETE is used without query parameters, the entire collection is deleted.
+      When DELETE is used with the query parameter where devid is specified, only the matched entry is deleted.
+    queryParameters:
+        subject:
+            type: string
+            description: |
+              Delete the PSTAT identified by the string containing the UUID.
+            required: false
+            example: |
+              DELETE /oic/sec/pstat?deviceid="de305d54-75b4-431b-adb2-eb6b9e546014"
+    responses:
+      200:
+        description: The PSTAT instance or the the entire resource has been successfully deleted.
+      400:
+        description: The request is invalid.

@@ -1,0 +1,108 @@
+#%RAML 0.8
+title: OIC Security Doxm Resource
+version: v1.0-20150819
+schemas:
+  - Doxm: !include oic.sec.doxm.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/oic/sec/doxm:
+  description: |
+    This resource specifies properties needed to establish a device owner.
+
+  displayName: Device owner transfer method resource data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves the DOXM resource data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: doxm
+            example: |
+              {
+              "rt": "oic.sec.doxm",
+              "oxm": [0, 2, 3],
+              "oxmsel": 0,
+              "sct": 13,
+              "owned": true,
+              "deviceid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+              "devowner": "oic.sec.svc.doxs",#### need to do spec review
+              "rowner": "oic.sec.svc.bss"#### need to do spec review
+              }
+
+      400:
+        description: The request is invalid.
+
+  post:
+    description: |
+      Updates the DOXM resource data
+    body:
+      application/json:
+        schema: doxm
+        example: |
+          {
+          "rt": "oic.sec.doxm",
+          "oxms": {"oxml": ["oic.sec.oxm.jw", 2, 3]},
+          "oxmsel": {"oxm": "oic.sec.oxm.jw"},
+          "sct": {"bitmask": 13},
+          "owned": true,
+          "deviceid": {"idt": 0, "id": "de305d54-75b4-431b-adb2-eb6b9e546014"},
+          "devowner": {"sl": ["oic.sec.svc.doxs"]},
+          "rowner": {"sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]}
+          }
+    responses:
+      201:
+        description: The DOXM entry is created.
+      204:
+        description: The DOXM entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: |
+      Creates the DOXM resource data
+    body:
+      application/json:
+        schema: doxm
+        example: |
+          {
+          "rt": "oic.sec.doxm",
+          "oxms": {"oxml": ["oic.sec.oxm.jw", 2, 3]},
+          "oxmsel": {"oxm": "oic.sec.oxm.jw"},
+          "sct": {"bitmask": 13},
+          "owned": true,
+          "deviceid": {"idt": 0, "id": "de305d54-75b4-431b-adb2-eb6b9e546014"},
+          "devowner": {"sl": ["oic.sec.svc.doxs"]},
+          "rowner": {"sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]}
+          }
+    responses:
+      201:
+        description: The DOXM entry is created.
+      400:
+        description: The request is invalid.
+
+  delete:
+      description: |
+        Deletes the DOXM data.
+        When DELETE is used without query parameters, the entire DOXM resource is deleted.
+        When DELETE uses a query value naming the deviceid, only the matched entry is deleted.
+      queryParameters:
+          subject:
+              type: string
+              description: |
+                Delete the DOXM entry identified by the string containing device ID.
+              required: false
+              example: |
+                DELETE /oic/sec/doxm?deviceid="de305d54-75b4-431b-adb2-eb6b9e546014"
+      responses:
+        204:
+          description: The CRL instance or the the entire CRL resource has been successfully deleted.
+        400:
+          description: The request is invalid.

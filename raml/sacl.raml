@@ -1,0 +1,126 @@
+#%RAML 0.8
+title: OIC Security SignedAcl Resource
+version: v1.0-20150819
+schemas:
+  - Sacl: !include oic.sec.sacl.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/SecSaclResURI:
+  description: |
+    This resource specifies a signed ACL object.
+
+  displayName: Signed Access Control List data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves the sacl resource data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: Sacl
+            example: |
+              {
+              "rt": "oic.sec.sacl",
+              "acl": [
+                   {
+                    "subject":  "de305d54-75b4-431b-adb2-eb6b9e546014",
+                    "resources":["/oic/light","/oic/door"],
+                    "permission":15,
+                    "period":["20150101T180000Z/20150102T070000Z"],
+                    "recurrence": ["RRULE:FREQ=WEEKLY;UNTIL=20150131TO70000Z"]
+                  }
+                ],
+              "signature":  {
+                "sigtype": "oic.sec.sigtype.jws",
+                "signature": "BASE64ENCODEDSIGNATUREBITS"
+              },
+              "ams":["oic.sec.svc.ams"]
+             }
+			  
+  post:
+    description: |
+      Sets the sacl resource data
+    body:
+      application/json:
+        schema: sacl
+        example: |
+          {
+              "rt": "oic.sec.sacl",
+              "acl": [
+                   {
+                    "subject":  "de305d54-75b4-431b-adb2-eb6b9e546014",
+                    "resources":["/oic/light","/oic/door"],
+                    "permission":15,
+                    "period":["20150101T180000Z/20150102T070000Z"],
+                    "recurrence": ["RRULE:FREQ=WEEKLY;UNTIL=20150131TO70000Z"]
+                  }
+                ],
+              "signature":  {
+                "sigtype": "oic.sec.sigtype.jws",
+                "signature": "BASE64ENCODEDSIGNATUREBITS"
+              },
+              "ams":["oic.sec.svc.ams"]
+          }
+    responses:
+      201:
+        description: The ACL entry is created.
+      204:
+        description: The ACL entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: |
+      Sets the sacl resource data
+    body:
+      application/json:
+        schema: sacl
+        example: |
+          {
+              "rt": "oic.sec.sacl",
+              "acl": [
+                   {
+                    "subject":  "de305d54-75b4-431b-adb2-eb6b9e546014",
+                    "resources":["/oic/light","/oic/door"],
+                    "permission":15,
+                    "period":["20150101T180000Z/20150102T070000Z"],
+                    "recurrence": ["RRULE:FREQ=WEEKLY;UNTIL=20150131TO70000Z"]
+                  }
+                ],
+              "signature":  {
+                "sigtype": "oic.sec.sigtype.jws",
+                "signature": "BASE64ENCODEDSIGNATUREBITS"
+              },
+              "ams":["oic.sec.svc.ams"]
+          }
+    responses:
+      201:
+        description: The signed ACL entry is created.
+      400:
+        description: The request is invalid.
+
+  delete:
+    description: |
+      Deletes the signed ACL data.
+      When DELETE is used without query parameters, the entire collection is deleted.
+      When DELETE is used with the query parameter where "acl" is specified, only the matched entry is deleted.
+    queryParameters:
+        subject:
+            type: string
+            description: |
+              Delete the signed ACL identified by the string containing subject UUID.
+            required: false
+            example: |
+              DELETE /oic/sec/sacl?acl="de305d54-75b4-431b-adb2-eb6b9e546014, ..."
+    responses:
+      200:
+        description: The signed ACL instance or the the entire signed ACL resource has been successfully deleted.
+      400:
+        description: The request is invalid.
