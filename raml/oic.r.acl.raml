@@ -1,0 +1,260 @@
+#%RAML 0.8
+title: OICSecurityAclResource
+version: v1.0-20150819
+schemas:
+- Acl: !include oic.r.acl.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/SecAclResURI:
+  description: |
+    This resource specifies the local access control list.
+
+  displayName: Access Control List data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves the acl data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: Acl
+            example: |
+              {
+                "acl": {
+                  "aces": [
+                    {
+                      "subject": {
+                        "idt": "0",
+                        "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
+                      },
+                      "resources": [
+                        {
+                          "href": "coaps://IP-ADDR/temp",
+                          "rel": "some-rel",
+                          "rt": "oic.r.temperature",
+                          "if": "oic.if.a"
+                        },
+                        {
+                          "href": "coaps://IP-ADDR/temp",
+                          "rel": "some-rel",
+                          "rt": "oic.r.temperature",
+                          "if": "oic.if.s"
+                        }
+                      ],
+                      "permission": {
+                        "bitmask": "11111"
+                      },
+                      "validity": [
+                        [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
+                        [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
+                      ]
+                    },
+                    {
+                      "subject": {
+                        "rl": {
+                          "authority": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
+                          "roles": [
+                            "SOME_STRING", "SOME_STRING"
+                          ]
+                        }
+                      },
+                      "resources": [
+                        {
+                          "href": "coaps://IP-ADDR/light",
+                          "rel": "some-rel",
+                          "rt": "oic.r.light",
+                          "if": "oic.if.a"
+                        },
+                        {
+                          "href": "coaps://IP-ADDR/door",
+                          "rel": "some-rel",
+                          "rt": "oic.r.door",
+                          "if": "oic.if.a"
+                        }
+                      ],
+                      "permission": {
+                        "bitmask": "11111"
+                      }
+                    }
+                  ]
+                },
+                "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+              }
+      400:
+        description: The request is invalid.
+
+  post:
+    description: |
+      Updates the ACL resource with the provided values.
+    body:
+      application/json:
+        schema: Acl
+        example: |
+          {
+            "acl": {
+              "aces": [
+                {
+                  "subject": {
+                    "idt": "0",
+                    "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
+                  },
+                  "resources": [
+                    {
+                      "href": "coaps://IP-ADDR/temp",
+                      "rel": "some-rel",
+                      "rt": "oic.r.temperature",
+                      "if": "oic.if.a"
+                    },
+                    {
+                      "href": "coaps://IP-ADDR/temp",
+                      "rel": "some-rel",
+                      "rt": "oic.r.temperature",
+                      "if": "oic.if.s"
+                    }
+                  ],
+                  "permission": {
+                    "bitmask": "11111"
+                  },
+                  "validity": [
+                    [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
+                    [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
+                  ]
+                },
+                {
+                  "subject": {
+                    "rl": {
+                      "authority": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
+                      "roles": [
+                        "SOME_STRING", "SOME_STRING"
+                      ]
+                    }
+                  },
+                  "resources": [
+                    {
+                      "href": "coaps://IP-ADDR/light",
+                      "rel": "some-rel",
+                      "rt": "oic.r.light",
+                      "if": "oic.if.a"
+                    },
+                    {
+                      "href": "coaps://IP-ADDR/door",
+                      "rel": "some-rel",
+                      "rt": "oic.r.door",
+                      "if": "oic.if.a"
+                    }
+                  ],
+                  "permission": {
+                    "bitmask": "11111"
+                  }
+                }
+              ]
+            },
+            "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+          }
+    responses:
+      201:
+        description: The ACL entry is created.
+      204:
+        description: The ACL entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: |
+      Creates the new acl data
+    body:
+      application/json:
+        schema: Acl
+        example: |
+          {
+            "acl": {
+              "aces": [
+                {
+                  "subject": {
+                    "idt": "0",
+                    "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
+                  },
+                  "resources": [
+                    {
+                      "href": "coaps://IP-ADDR/temp",
+                      "rel": "some-rel",
+                      "rt": "oic.r.temperature",
+                      "if": "oic.if.a"
+                    },
+                    {
+                      "href": "coaps://IP-ADDR/temp",
+                      "rel": "some-rel",
+                      "rt": "oic.r.temperature",
+                      "if": "oic.if.s"
+                    }
+                  ],
+                  "permission": {
+                    "bitmask": "11111"
+                  },
+                  "validity": [
+                    [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
+                    [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
+                  ]
+                },
+                {
+                  "subject": {
+                    "rl": {
+                      "authority": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
+                      "roles": [
+                        "SOME_STRING", "SOME_STRING"
+                      ]
+                    }
+                  },
+                  "resources": [
+                    {
+                      "href": "coaps://IP-ADDR/light",
+                      "rel": "some-rel",
+                      "rt": "oic.r.light",
+                      "if": "oic.if.a"
+                    },
+                    {
+                      "href": "coaps://IP-ADDR/door",
+                      "rel": "some-rel",
+                      "rt": "oic.r.door",
+                      "if": "oic.if.a"
+                    }
+                  ],
+                  "permission": {
+                    "bitmask": "11111"
+                  }
+                }
+              ]
+            },
+            "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+          }
+    responses:
+      201:
+        description: The ACL entry is created.
+      400:
+        description: The request is invalid.
+
+  delete:
+    description: |
+      Deletes the acl data.
+      When DELETE is used without query parameters, the entire collection is deleted.
+      When DELETE uses the search parameter with "subject", only the matched entry is deleted.
+    queryParameters:
+        subject:
+            type: string
+            description: |
+              Delete the ACL identified by the string containing subject UUID.
+              e.g. DELETE /myacl?subject="de305d54-75b4-431b-adb2-eb6b9e546014"
+            required: false
+
+    responses:
+      200:
+        description: The ACL instance or the the entire ACL resource has been successfully deleted.
+      400:
+        description: The request is invalid.

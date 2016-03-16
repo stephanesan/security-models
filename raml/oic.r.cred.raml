@@ -13,7 +13,6 @@ traits:
 /SecCredResURI:
   description: |
     This resource specifies credentials a device may use to establish secure communication.
-
   displayName: Credential Resource
   is: [ interface ]
 
@@ -27,7 +26,6 @@ traits:
             schema: Cred
             example: |
               {
-                "rt": "oic.sec.cred",
                 "creds": [
                   {
                     "credid": 55,
@@ -149,7 +147,6 @@ traits:
             ],
             "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
           }
-
     responses:
       201:
         description: The credential entry is created.
@@ -203,7 +200,6 @@ traits:
             ],
             "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
           }
-
     responses:
          201:
             description: The credential entry is created.
