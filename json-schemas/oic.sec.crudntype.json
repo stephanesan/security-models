@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.crudntype.json#",
+  "id": "http://openinterconnect.org/schemas/oic.sec.crudntype.json",
   "title": "Permission BitMask",
   "definitions": {
     "oic.sec.crudntype": {
