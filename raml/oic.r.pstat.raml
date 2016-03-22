@@ -27,24 +27,21 @@ traits:
             schema: Pstat
             example: |
               {
+                "dos": {"s": 3, "p": true},
                 "isop": true,
-                "cm": {
-                  "bitmask": "00111110"
-                },
-                "tm": {
-                  "bitmask": "00000000"
-                },
-                "om": {
-                  "bitmask": "00000010"
-                },
-                "sm": {
-                  "bitmask": "00000111"
-                },
-                "devid": {
+                "cm": 8,
+                "tm": 60,
+                "om": 2,
+                "sm": 7,
+                "deviceidid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+                "deviceid": {
                   "idt": "0",
                   "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
                 },
-                "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+                "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+                "rowner": {
+                  "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+                }
               }
       400:
         description: The request is invalid.
@@ -57,24 +54,21 @@ traits:
         schema: Pstat
         example: |
           {
+            "dos": {"s": 3, "p": true},
             "isop": true,
-            "cm": {
-              "bitmask": "00111110"
-            },
-            "tm": {
-              "bitmask": "00000000"
-            },
-            "om": {
-              "bitmask": "00000010"
-            },
-            "sm": {
-              "bitmask": "00000111"
-            },
-            "devid": {
+            "cm": 8,
+            "tm": 60,
+            "om": 2,
+            "sm": 7,
+            "deviceidid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+            "deviceid": {
               "idt": "0",
               "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
             },
-            "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+            "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+            "rowner": {
+              "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+            }
           }
     responses:
       201:
@@ -92,24 +86,21 @@ traits:
         schema: Pstat
         example: |
           {
+            "dos": {"s": 3, "p": true},
             "isop": true,
-            "cm": {
-              "bitmask": "00111110"
-            },
-            "tm": {
-              "bitmask": "00000000"
-            },
-            "om": {
-              "bitmask": "00000010"
-            },
-            "sm": {
-              "bitmask": "00000111"
-            },
-            "devid": {
+            "cm": 8,
+            "tm": 60,
+            "om": 2,
+            "sm": 7,
+            "deviceidid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+            "deviceid": {
               "idt": "0",
               "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
             },
-            "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+            "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+            "rowner": {
+              "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+            }
           }
     responses:
       201:
