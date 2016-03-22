@@ -22,8 +22,8 @@
           [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
           [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
         ]
-      },
+      }
     ]
   },
-  "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+  "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014"
 }
