@@ -7,9 +7,10 @@
       "description": "OIC CRUDN types",
       "properties": {
         "bitmask": {
-          "type": "string",
-          "pattern": "^[01]{5}$",
-          "description": "The string is a 5 bit bitmask indicating permissions",
+          "type": "integer",
+          "minimum": 0,
+          "maximum": 31,
+          "description": "The encoded bitmask indicating permissions",
           "detail-desc": [  "0  - No permissions",
                             "1 - Create permission is granted",
                             "2 - Read, observe, discover permission is granted",

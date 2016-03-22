@@ -13,24 +13,24 @@
         "cm":   {
           "type": "object",
           "description": "Current device provisioning mode",
-          "$ref": "oic.sec.dpmtype.json"
+          "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
         },
         "tm": {
           "type": "object",
           "description": "Target device provisioning mode",
-          "$ref": "oic.sec.dpmtype.json"
+          "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
         },
         "om": {
           "type": "object",
           "description": "Current operational mode",
-          "$ref": "oic.sec.pomtype.json"
+          "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
         "sm": {
           "type": "object",
-          "description": "Suppported operational modes",
-          "$ref": "oic.sec.pomtype.json"
+          "description": "Supported operational modes",
+          "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
-        "devid":   {
+        "deviceid":   {
           "type": "object",
           "description": "The device to which the status applies. NULL refers to this device.",
           "$ref": "oic.sec.didtype.json"

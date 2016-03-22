@@ -1,18 +1,10 @@
 {
   "isop": true,
-  "cm": {
-    "bitmask": "00111110"
-  },
-  "tm": {
-    "bitmask": "00000000"
-  },
-  "om": {
-    "bitmask": "00000010"
-  },
-  "sm": {
-    "bitmask": "00000111"
-  },
-  "devid": {
+  "cm": 8,
+  "tm": 0,
+  "om": 2,
+  "sm": 7,
+  "deviceid": {
     "idt": "0",
     "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
   },

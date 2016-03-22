@@ -40,9 +40,9 @@
           "items": { "$ref": "oic.oic-link.json" }
         },
         "permission": {
-          "type": "object",
+          "type": "integer",
           "description": "Bitmask encoding of CRUDN permission",
-          "$ref": "oic.sec.crudntype.json"
+          "$ref": "oic.sec.crudntype.json/definitions/oic.sec.crudntype/properties/bitmask"
         },
         "validity": {
           "type": "array",

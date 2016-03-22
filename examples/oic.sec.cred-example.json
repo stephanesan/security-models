@@ -12,9 +12,7 @@
       ]
     }
   },
-  "credtype": {
-    "bitmask": "111111"
-  },
+  "credtype": 32,
   "publicdata": {
     "encoding": "oic.sec.encoding.base64",
     "pubdata": "BASE-64-ENCODED-VALUE"

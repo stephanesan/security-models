@@ -21,7 +21,7 @@
         "sct": {
           "type": "object",
           "description": "Bitmask encoding of supported credential types",
-          "$ref": "oic.sec.credtype.json"
+          "$ref": "oic.sec.credtype.json#/definitions/oic.sec.credtype/properties/bitmask"
         },
         "owned":   {
           "type": "boolean",

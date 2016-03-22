@@ -7,8 +7,9 @@
       "description": "Device provisioning mode maintains a bitmask of the possible provisioning states of a device",
       "properties" : {
         "bitmask": {
-          "type": "string",
-          "pattern": "^([01]{8})?[01]{8}$",
+          "type": "integer",
+          "minimum": 1,
+          "maximum": 63,
           "description": "The value can be either 8 or 16 character in length. If its only 8 characters it represents the lower byte value",
           "detail-desc": [  "1 - Manufacturer reset state",
                             "2 - Device pairing and owner transfer state",
