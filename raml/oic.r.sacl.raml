@@ -27,13 +27,10 @@ traits:
             schema: Sacl
             example: |
               {
-                "acl": {
+                "aclist": {
                   "aces": [
                     {
-                      "subject": {
-                        "idt": "0",
-                        "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
-                      },
+                      "subjectid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
                       "resources": [
                         {
                           "href": "coaps://IP-ADDR/temp",
@@ -48,14 +45,14 @@ traits:
                           "if": "oic.if.s"
                         }
                       ],
-                      "permission": {
-                        "bitmask": "11111"
-                      },
+                      "permission": 31,
                       "validity": [
                         [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
                         [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
                       ]
-                    },
+                    }
+                  ],
+                  "aces2": [
                     {
                       "subject": {
                         "rl": {
@@ -79,16 +76,16 @@ traits:
                           "if": "oic.if.a"
                         }
                       ],
-                      "permission": {
-                        "bitmask": "11111"
-                      }
+                      "permission": 15
                     }
                   ]
+
                 },
                 "signature": {
                   "sigtype": "oic.sec.sigtype.pk7",
                   "sigvalue": "ENCODED-SIGNATURE-VALUE"
                 },
+                "amsid": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
                 "ams": {
                   "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
                 }
@@ -102,13 +99,10 @@ traits:
         schema: Sacl
         example: |
           {
-            "acl": {
+            "aclist": {
               "aces": [
                 {
-                  "subject": {
-                    "idt": "0",
-                    "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
-                  },
+                  "subjectid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
                   "resources": [
                     {
                       "href": "coaps://IP-ADDR/temp",
@@ -123,14 +117,14 @@ traits:
                       "if": "oic.if.s"
                     }
                   ],
-                  "permission": {
-                    "bitmask": "11111"
-                  },
+                  "permission": 31,
                   "validity": [
                     [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
                     [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
                   ]
-                },
+                }
+              ],
+              "aces2": [
                 {
                   "subject": {
                     "rl": {
@@ -154,16 +148,16 @@ traits:
                       "if": "oic.if.a"
                     }
                   ],
-                  "permission": {
-                    "bitmask": "11111"
-                  }
+                  "permission": 15
                 }
               ]
+
             },
             "signature": {
               "sigtype": "oic.sec.sigtype.pk7",
               "sigvalue": "ENCODED-SIGNATURE-VALUE"
             },
+            "amsid": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
             "ams": {
               "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
             }
@@ -185,13 +179,10 @@ traits:
         schema: Sacl
         example: |
           {
-            "acl": {
+            "aclist": {
               "aces": [
                 {
-                  "subject": {
-                    "idt": "0",
-                    "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
-                  },
+                  "subjectid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
                   "resources": [
                     {
                       "href": "coaps://IP-ADDR/temp",
@@ -206,14 +197,14 @@ traits:
                       "if": "oic.if.s"
                     }
                   ],
-                  "permission": {
-                    "bitmask": "11111"
-                  },
+                  "permission": 31,
                   "validity": [
                     [ "20160101T180000Z/20170102T070000Z", [ "DSTART:XXXXX", "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ],
                     [ "20160101T180000Z/PT5H30M", [ "RRULE:FREQ=DAILY;UNTIL=20180131T140000Z;BYMONTH=1" ] ]
                   ]
-                },
+                }
+              ],
+              "aces2": [
                 {
                   "subject": {
                     "rl": {
@@ -237,16 +228,16 @@ traits:
                       "if": "oic.if.a"
                     }
                   ],
-                  "permission": {
-                    "bitmask": "11111"
-                  }
+                  "permission": 15
                 }
               ]
+
             },
             "signature": {
               "sigtype": "oic.sec.sigtype.pk7",
               "sigvalue": "ENCODED-SIGNATURE-VALUE"
             },
+            "amsid": "484b8a51-cb23-46c0-a5f1-b4aebef50ebe",
             "ams": {
               "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
             }
