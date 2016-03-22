@@ -20,20 +20,9 @@
         }
       ]
     },
-    "oic.sec.ace": {
+    "oic.sec.acebase": {
       "type": "object",
       "properties": {
-        "subject": {
-          "description": "The subject to whom this ace applies, either a deviceId or a role",
-          "anyOf": [
-            {
-              "$ref": "oic.sec.didtype.json"
-            },
-            {
-              "$ref": "oic.sec.roletype.json"
-            }
-          ]
-        },
         "resources": {
           "type": "array",
           "description": "References the application's resources to which a security policy applies",
@@ -42,7 +31,7 @@
         "permission": {
           "type": "integer",
           "description": "Bitmask encoding of CRUDN permission",
-          "$ref": "oic.sec.crudntype.json/definitions/oic.sec.crudntype/properties/bitmask"
+          "$ref": "oic.sec.crudntype.json#/definitions/oic.sec.crudntype/properties/bitmask"
         },
         "validity": {
           "type": "array",
@@ -51,7 +40,43 @@
           }
         }
       },
-      "required": ["subject", "resources", "permission"]
+      "required": [ "resources", "permission" ]
+    },
+    "oic.sec.ace": {
+      "allOf": [
+        { "$ref": "#/definitions/oic.sec.acebase" },
+        {
+          "properties": {
+            "subjectid": {
+              "type": "string",
+              "format": "uuid",
+              "description": "The id of the device to which the ace applies to"
+            }
+          },
+          "required": [ "subjectid" ]
+        }
+      ]
+    },
+    "oic.sec.ace2": {
+      "allOf": [
+        { "$ref": "#/definitions/oic.sec.acebase" },
+        {
+          "properties": {
+            "subject": {
+              "description": "The subject to whom this ace applies, either a deviceId or a role",
+              "anyOf": [
+                {
+                  "$ref": "oic.sec.didtype.json"
+                },
+                {
+                  "$ref": "oic.sec.roletype.json"
+                }
+              ]
+            }
+          },
+          "required": [ "subject" ]
+        }
+      ]
     }
   },
   "type": "object",
@@ -61,7 +86,12 @@
       "items": {
         "$ref": "#/definitions/oic.sec.ace"
       }
+    },
+    "aces2": {
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/oic.sec.ace2"
+      }
     }
-  },
-  "required":["aces"]
+  }
 }

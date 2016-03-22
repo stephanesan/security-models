@@ -6,17 +6,29 @@
     "oic.r.acl": {
       "type": "object",
       "properties": {
-        "acl":  {
+        "aclist":  {
           "type": "object",
           "description": "Access Control Entries in the Acl resource",
           "$ref": "oic.sec.ace.json"
         },
+        "rownerid": {
+          "type": "string",
+          "format": "uuid",
+          "description": "The value identifies the unique resource owner"
+        },
         "rowner":   {
-          "type": "array",
-          "description": "Entries in oic.sec.svc resource that own this resource",
-          "items": {
-            "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items"
-          }
+          "oneOf": [
+            {
+              "type": "object",
+              "$ref": "oic.sec.svctype.json",
+              "description": "Entries in oic.sec.svc resource that own this resource"
+            },
+            {
+              "type": "object",
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.hostid",
+              "description": "Resource owner indicated in the form of a device id"
+            }
+          ]
         }
       }
     }
@@ -25,5 +37,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.acl" }
   ],
-  "required": ["acl","rowner"]
+  "required": [ "aclist","rownerid" ]
 }
