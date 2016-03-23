@@ -2,7 +2,7 @@
 title: OICSecurityPstatResource
 version: v1.0-20150819
 schemas:
-  - Pstat: !include ../json-schema/oic.r.pstat.json
+  - Pstat: !include ../json-schemas/oic.r.pstat.json
 
 traits:
   - interface:
@@ -27,7 +27,6 @@ traits:
             schema: Pstat
             example: |
               {
-                "dos": {"s": 3, "p": true},
                 "isop": true,
                 "cm": 8,
                 "tm": 60,
@@ -54,7 +53,6 @@ traits:
         schema: Pstat
         example: |
           {
-            "dos": {"s": 3, "p": true},
             "isop": true,
             "cm": 8,
             "tm": 60,
@@ -86,7 +84,6 @@ traits:
         schema: Pstat
         example: |
           {
-            "dos": {"s": 3, "p": true},
             "isop": true,
             "cm": 8,
             "tm": 60,

@@ -2,7 +2,7 @@
 title: OICSecurityServicesResource
 version: v1.0-20150819
 schemas:
-  - Svc: !include ../json-schema/oic.r.svc.json
+  - Svc: !include ../json-schemas/oic.r.svc.json
 
 traits:
   - interface:
@@ -27,49 +27,50 @@ traits:
             schema: Svc
             example: |
               {
-                "hosts": [
-                  {
-                    "hostid": {
-                    "idt": "0",
-                    "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
-                    },
-                    "svcs": {
-                      "sl": [ "oic.sec.svc.doxs" ]
-                    },
-                    "sct": 32,
-                    "scid": 1,
-                    "ccid": 1,
-                    "crms": [ "oic.sec.crm.psk" ]
-                  },
-                  {
-                    "hostid": {
+                  "hosts": [
+                    {
+                      "hostid": {
                       "idt": "0",
-                      "id": "de305d54-75b4-431b-adb2-eb6b9e546015"
+                      "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
+                      },
+                      "svcs": {
+                        "sl": [ "oic.sec.svc.doxs" ]
+                      },
+                      "sct": 32,
+                      "scid": 1,
+                      "ccid": 1,
+                      "crms": [ "oic.sec.crm.psk" ]
                     },
-                    "svcs": {
-                      "sl": [ "oic.sec.svc.bss" ]
+                    {
+                      "hostid": {
+                        "idt": "0",
+                        "id": "de305d54-75b4-431b-adb2-eb6b9e546015"
+                      },
+                      "svcs": {
+                        "sl": [ "oic.sec.svc.bss" ]
+                      },
+                      "sct": 16,
+                      "scid": 2,
+                      "ccid": 2,
+                      "crms": [ "oic.sec.crm.pro", "oic.sec.crm.psk" ]
                     },
-                    "sct": 16,
-                    "scid": 2,
-                    "ccid": 2,
-                    "crms": [ "oic.sec.crm.pro", "oic.sec.crm.psk" ]
-                  },
-                  {
-                    "hostid": {
-                      "idt": "0",
-                      "id": "de305d54-75b4-431b-adb2-eb6b9e546016"
-                    },
-                    "svcs": {
-                      "sl": [ "oic.sec.svc.cms", "oic.sec.svc.ams" ]
-                    },
-                    "sct": 1,
-                    "scid": 3,
-                    "ccid": 4,
-                    "crms": [ "oic.sec.crm.pro", "oic.sec.crm.psk", "oic.sec.crm.pk10" ]
+                    {
+                      "hostid": {
+                        "idt": "0",
+                        "id": "de305d54-75b4-431b-adb2-eb6b9e546016"
+                      },
+                      "svcs": {
+                        "sl": [ "oic.sec.svc.cms", "oic.sec.svc.ams" ]
+                      },
+                      "sct": 1,
+                      "scid": 3,
+                      "ccid": 4,
+                      "crms": [ "oic.sec.crm.pro", "oic.sec.crm.psk", "oic.sec.crm.pk10" ]
+                    }
+                  ],
+                  "rowner": {
+                    "sl": ["oic.sec.svc.doxs", "oic.sec.svc.bss"]
                   }
-                ],
-                "rowner": {
-                  "sl": ["oic.sec.svc.doxs", "oic.sec.svc.bss"]
               }
       400:
         description: The request is invalid.
@@ -125,6 +126,7 @@ traits:
             ],
             "rowner": {
               "sl": ["oic.sec.svc.doxs", "oic.sec.svc.bss"]
+            }
           }
     responses:
       201:
@@ -185,6 +187,7 @@ traits:
             ],
             "rowner": {
               "sl": ["oic.sec.svc.doxs", "oic.sec.svc.bss"]
+            }
           }
     responses:
       201:
