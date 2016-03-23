@@ -20,7 +20,7 @@
                             "oic.sec.encoding.pem - Encoding for PEM encoded certificate or chain",
                             "oic.sec.encoding.der - Encoding for DER encoded certificate" ]
         },
-        "optdata": {
+        "data": {
           "type": "string",
           "description": "The encoded structure"
         }

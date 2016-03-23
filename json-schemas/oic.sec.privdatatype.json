@@ -18,7 +18,7 @@
                               "oic.sec.encoding.uri - URI reference",
                               "oic.sec.encoding.handle - Data is contained in a storage sub-system referenced using a handle" ]
           },
-          "privdata": {
+          "data": {
             "type": "string",
             "description": "The encoded value"
           },

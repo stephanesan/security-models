@@ -1,4 +1,4 @@
 {
   "encoding": "oic.sec.encoding.base64",
-  "pubdata": "BASE-64-ENCODED-VALUE"
+  "data": "BASE-64-ENCODED-VALUE"
 }
