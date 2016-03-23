@@ -6,7 +6,7 @@
     "oic.r.sacl": {
       "type": "object",
       "properties": {
-        "acl":  {
+        "aclist":  {
           "type": "object",
           "description": "Access Control Entries in the Acl resource",
           "$ref": "oic.sec.ace.json"
@@ -15,6 +15,10 @@
           "type": "object",
           "description": "The signature over the ACL resource",
           "$ref": "oic.sec.sigtype.json"
+        },
+        "amsid": {
+          "type": "string",
+          "format": "uuid"
         },
         "ams":   {
           "type": "object",
@@ -28,6 +32,6 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.sacl" }
   ],
-  "required": ["acl", "signature", "ams"],
+  "required": ["aclist", "signature", "amsid"],
   "additionalItems": false
 }

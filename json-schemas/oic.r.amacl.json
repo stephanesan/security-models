@@ -11,15 +11,23 @@
           "description": "Multiple links to this host's resources",
           "items": { "$ref": "oic.oic-link.json" }
         },
+        "amsid": {
+          "type": "string",
+          "format": "uuid"
+        },
         "ams":   {
-          "type": "array",
+          "type": "object",
           "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
-          "items": { "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items" }
+          "$ref": "oic.sec.svctype.json"
+        },
+        "rownerid": {
+          "type": "string",
+          "format": "uuid"
         },
         "rowner":   {
-          "type": "array",
+          "type": "object",
           "description": "Entries in oic.sec.svc resource that own this resource",
-          "items": { "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype/properties/sl/items" }
+          "$ref": "oic.sec.svctype.json"
         }
       }
     }
@@ -28,5 +36,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.amacl" }
   ],
-  "required": [ "resources", "ams", "rowner"]
+  "required": [ "resources", "amsid", "rownerid"]
 }

@@ -1,5 +1,5 @@
 {
   "revstat": false,
   "encoding": "oic.sec.encoding.base64",
-  "optdata": "BASE-64-ENCODED-VALUE"
+  "data": "BASE-64-ENCODED-VALUE"
 }

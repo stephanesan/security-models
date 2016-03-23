@@ -17,7 +17,7 @@
                             "oic.sec.encoding.pem - Encoding for PEM encoded certificate or chain",
                             "oic.sec.encoding.der - Encoding for DER encoded certificate" ]
         },
-        "pubdata": {
+        "data": {
           "type": "string",
           "description": "The encoded value"
         }

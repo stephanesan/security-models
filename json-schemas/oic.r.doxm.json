@@ -27,20 +27,48 @@
           "type": "boolean",
           "description": "Ownership status flag"
         },
+        "deviceidid": {
+          "type": "string",
+          "format": "uuid"
+        },
         "deviceid":   {
           "type": "object",
           "description": "Post on-boarded device identier",
           "$ref": "oic.sec.didtype.json"
         },
-        "devowner":   {
-          "type": "object",
-          "description": "The service entity that performed the owner transfer method",
-          "$ref": "oic.sec.svctype.json"
+        "devownerid": {
+          "type": "string",
+          "format": "uuid"
         },
-        "rowner":   {
-          "type": "object",
-          "description": "Entries in oic.sec.svc resource that own this resource",
-          "$ref": "oic.sec.svctype.json"
+        "devowner":   {
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "Entries in oic.sec.svc resource that own this resource",
+              "$ref": "oic.sec.svctype.json"
+            },
+            {
+              "type": "object",
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.hostid"
+            }
+          ]
+        },
+        "rownerid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "rowner": {
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "Entries in oic.sec.svc resource that own this resource",
+              "$ref": "oic.sec.svctype.json"
+            },
+            {
+              "type": "object",
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.hostid"
+            }
+          ]
         }
       }
     }
@@ -49,5 +77,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.doxm" }
   ],
-  "required": [ "oxms", "oxmsel", "sct", "owned", "deviceid", "devowner", "rowner" ]
+  "required": [ "oxms", "oxmsel", "sct", "owned", "deviceidid", "devownerid", "rownerid" ]
 }

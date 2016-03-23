@@ -15,17 +15,17 @@
   "credtype": 32,
   "publicdata": {
     "encoding": "oic.sec.encoding.base64",
-    "pubdata": "BASE-64-ENCODED-VALUE"
+    "data": "BASE-64-ENCODED-VALUE"
   },
   "privatedata": {
     "encoding": "oic.sec.encoding.base64",
-    "privdata": "BASE-64-ENCODED-VALUE",
+    "data": "BASE-64-ENCODED-VALUE",
     "handle": 4
   },
   "optionaldata": {
     "revstat": false,
     "encoding": "oic.sec.encoding.base64",
-    "optdata": "BASE-64-ENCODED-VALUE"
+    "data": "BASE-64-ENCODED-VALUE"
   },
   "period": "20160101T180000Z/20170102T070000Z",
   "crms": [ "oic.sec.crm.pk10" ]
