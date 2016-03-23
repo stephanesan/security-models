@@ -29,7 +29,6 @@
       "period": "20160101T180000Z/20170102T070000Z",
       "crms": [ "oic.sec.crm.pk10" ]
     },
-
     {
       "credid": 55,
       "subjectidid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
@@ -65,5 +64,7 @@
     }
   ],
   "rownerid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
-  "rowner": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+  "rowner": {
+    "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+  }
 }

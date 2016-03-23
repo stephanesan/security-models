@@ -16,7 +16,7 @@
           "format": "uuid",
           "description": "The value identifies the unique resource owner"
         },
-        "rowner":   {
+        "rowner": {
           "oneOf": [
             {
               "type": "object",
