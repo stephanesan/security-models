@@ -26,9 +26,11 @@
     "oic.sec.hostid": {
       "type": "object",
       "description": "Identifier format used to denote resource owners",
-      "hostid": {
-        "type": "object",
-        "$ref": "#/definitions/oic.sec.didtype"
+      "properties": {
+        "hostid": {
+          "type": "object",
+          "$ref": "#/definitions/oic.sec.didtype"
+        }
       }
     }
   },
