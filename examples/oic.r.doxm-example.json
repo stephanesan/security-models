@@ -3,7 +3,7 @@
   "oxmsel": 0,
   "sct": 63,
   "owned": true,
-  "deviceidid": "de305d54-75b4-431b-adb2-eb6b9e546014",
-  "devownerid": "de305d54-75b4-431b-adb2-eb6b9e546014",
-  "rownerid": "de305d54-75b4-431b-adb2-eb6b9e546014"
+  "deviceuuid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+  "devowneruuid": "de305d54-75b4-431b-adb2-eb6b9e546014",
+  "rowneruuid": "de305d54-75b4-431b-adb2-eb6b9e546014"
 }
