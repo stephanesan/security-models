@@ -20,7 +20,7 @@
           "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
           "$ref": "oic.sec.svctype.json"
         },
-        "rowneriuud": {
+        "rowneruuid": {
           "type": "string",
           "format": "uuid"
         },

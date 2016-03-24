@@ -37,5 +37,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.acl" }
   ],
-  "required": [ "aclist","rowneruu" ]
+  "required": [ "aclist","rowneruuid" ]
 }
