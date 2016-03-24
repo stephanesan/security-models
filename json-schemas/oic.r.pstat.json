@@ -6,6 +6,11 @@
     "oic.r.pstat": {
       "type": "object",
       "properties": {
+        "dos": {
+          "type": "object",
+          "description": "Device on-boarding state",
+          "items": {"$ref": "oic.sec.dostype.json"}
+        },
         "isop":  {
           "type": "boolean",
           "description": "true indicates device is operational"
@@ -30,7 +35,7 @@
           "description": "Supported operational modes",
           "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
-        "deviceidid": {
+        "deviceuuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -39,7 +44,7 @@
           "description": "The device to which the status applies. NULL refers to this device.",
           "$ref": "oic.sec.didtype.json"
         },
-        "rownerid": {
+        "rowneruuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -63,5 +68,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.pstat" }
   ],
-  "required": [ "isop", "cm", "om", "sm", "deviceidid", "rownerid" ]
+  "required": [ "isop", "cm", "om", "sm", "deviceuuid", "rowneruuid" ]
 }

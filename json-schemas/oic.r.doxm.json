@@ -27,7 +27,7 @@
           "type": "boolean",
           "description": "Ownership status flag"
         },
-        "deviceidid": {
+        "deviceuuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -36,7 +36,7 @@
           "description": "Post on-boarded device identier",
           "$ref": "oic.sec.didtype.json"
         },
-        "devownerid": {
+        "devowneruuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -53,7 +53,7 @@
             }
           ]
         },
-        "rownerid": {
+        "rowneruuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -77,5 +77,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.doxm" }
   ],
-  "required": [ "oxms", "oxmsel", "sct", "owned", "deviceidid", "devownerid", "rownerid" ]
+  "required": [ "oxms", "oxmsel", "sct", "owned", "deviceuuid", "devowneruuid", "rowneruuid" ]
 }

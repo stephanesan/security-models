@@ -47,13 +47,13 @@
         { "$ref": "#/definitions/oic.sec.acebase" },
         {
           "properties": {
-            "subjectid": {
+            "subjectuuid": {
               "type": "string",
               "format": "uuid",
               "description": "The id of the device to which the ace applies to"
             }
           },
-          "required": [ "subjectid" ]
+          "required": [ "subjectuuid" ]
         }
       ]
     },
