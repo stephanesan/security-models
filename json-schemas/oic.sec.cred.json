@@ -10,11 +10,11 @@
           "type": "integer",
           "description": "Local reference to a credential resource"
         },
-        "subjectidid": {
+        "subjectuuid": {
           "type": "string",
           "format": "uuid"
         },
-        "subjectid": {
+        "subject": {
           "type": "object",
           "description": "The subject (principal) to which this credential belongs",
           "$ref": "oic.sec.didtype.json"
@@ -62,5 +62,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.sec.cred" }
   ],
-  "required": [ "credid", "subjectidid", "credtype" ]
+  "required": [ "credid", "subjectuuid", "credtype" ]
 }

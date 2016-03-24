@@ -16,7 +16,7 @@
           "description": "The signature over the ACL resource",
           "$ref": "oic.sec.sigtype.json"
         },
-        "amsid": {
+        "amsuuid": {
           "type": "string",
           "format": "uuid"
         },
@@ -32,6 +32,6 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.sacl" }
   ],
-  "required": ["aclist", "signature", "amsid"],
+  "required": ["aclist", "signature", "amsuuid"],
   "additionalItems": false
 }

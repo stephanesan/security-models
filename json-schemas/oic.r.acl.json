@@ -11,7 +11,7 @@
           "description": "Access Control Entries in the Acl resource",
           "$ref": "oic.sec.ace.json"
         },
-        "rownerid": {
+        "rowneruuid": {
           "type": "string",
           "format": "uuid",
           "description": "The value identifies the unique resource owner"
@@ -37,5 +37,5 @@
   "allOf": [
     { "$ref": "#/definitions/oic.r.acl" }
   ],
-  "required": [ "aclist","rownerid" ]
+  "required": [ "aclist","rowneruu" ]
 }
