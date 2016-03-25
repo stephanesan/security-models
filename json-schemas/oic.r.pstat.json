@@ -6,6 +6,11 @@
     "oic.r.pstat": {
       "type": "object",
       "properties": {
+        "dos": {
+          "type": "object",
+          "description": "Device on-boarding state",
+          "$ref": "oic.sec.dostype.json"
+        },
         "isop":  {
           "type": "boolean",
           "description": "true indicates device is operational"
