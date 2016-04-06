@@ -1,7 +1,7 @@
 {
   "hosts": [
     {
-      "hostid": {
+      "svcid": {
       "idt": "0",
       "id": "de305d54-75b4-431b-adb2-eb6b9e546014"
       },
@@ -14,7 +14,7 @@
       "crms": [ "oic.sec.crm.psk" ]
     },
     {
-      "hostid": {
+      "svcid": {
         "idt": "0",
         "id": "de305d54-75b4-431b-adb2-eb6b9e546015"
       },
@@ -27,7 +27,7 @@
       "crms": [ "oic.sec.crm.pro", "oic.sec.crm.psk" ]
     },
     {
-      "hostid": {
+      "svcid": {
         "idt": "0",
         "id": "de305d54-75b4-431b-adb2-eb6b9e546016"
       },

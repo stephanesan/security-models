@@ -1,0 +1,147 @@
+#%RAML 0.8
+title: OICSecurityAmaclResource
+version: v1.0-20150819
+schemas:
+  - Amacl: !include oic.r.amacl.json
+
+traits:
+  - interface:
+      queryParameters:
+        if:
+            enum: ["oic.if.baseline"]
+
+/SecAmaclResURI:
+  description: |
+    This resource specifies the host resources with access permission that is managed by an AMS.
+
+  displayName: Managed Access Control data
+  is: [ interface ]
+
+  get:
+    description: |
+      Retrieves the amacl data.
+    responses:
+      200:
+        body:
+          application/json:
+            schema: Amacl
+            example: |
+              {
+                "resources": [
+                  {
+                    "href": "coaps://IP-ADDR/temp",
+                    "rel": "some-rel",
+                    "rt": "oic.r.temperature",
+                    "if": "oic.if.a"
+                  },
+                  {
+                    "href": "coaps://IP-ADDR/temp",
+                    "rel": "some-rel",
+                    "rt": "oic.r.temperature",
+                    "if": "oic.if.s"
+                  }
+                ],
+                "ams": {
+                  "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+                },
+                "rowner": {
+                  "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+                },
+                "amsid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5",
+                "rownerid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5"
+              }
+
+  post:
+    description: |
+      Sets the new amacl data
+    body:
+      application/json:
+        schema: Amacl
+        example: |
+          {
+            "resources": [
+              {
+                "href": "coaps://IP-ADDR/temp",
+                "rel": "some-rel",
+                "rt": "oic.r.temperature",
+                "if": "oic.if.a"
+              },
+              {
+                "href": "coaps://IP-ADDR/temp",
+                "rel": "some-rel",
+                "rt": "oic.r.temperature",
+                "if": "oic.if.s"
+              }
+            ],
+            "ams": {
+              "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+            },
+            "rowner": {
+              "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+            },
+            "amsid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5",
+            "rownerid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5"
+          }
+    responses:
+      201:
+        description: The AMACL entry is created.
+      204:
+        description: The AMACL entry is updated.
+      400:
+        description: The request is invalid.
+
+  put:
+    description: |
+      Creates the new acl data
+    body:
+      application/json:
+        schema: Amacl
+        example: |
+          {
+            "resources": [
+              {
+                "href": "coaps://IP-ADDR/temp",
+                "rel": "some-rel",
+                "rt": "oic.r.temperature",
+                "if": "oic.if.a"
+              },
+              {
+                "href": "coaps://IP-ADDR/temp",
+                "rel": "some-rel",
+                "rt": "oic.r.temperature",
+                "if": "oic.if.s"
+              }
+            ],
+            "ams": {
+              "sl": [ "oic.sec.svc.doxs", "oic.sec.svc.bss" ]
+            },
+            "rowner": {
+              "sl": ["oic.sec.svc.bss", "oic.sec.svc.doxs"]
+            },
+            "amsid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5",
+            "rownerid": "6546b318-4bfa-4045-97f6-9cf8a0854dd5"
+          }
+    responses:
+      201:
+        description: The AMACL entry is created.
+      400:
+        description: The request is invalid.
+
+  delete:
+    description: |
+      Deletes the amacl data.
+      When DELETE is used without query parameters, the entire collection is deleted.
+      When DELETE uses the search parameter with "subject", only the matched entry is deleted.
+    queryParameters:
+        subject:
+            type: string
+            description: |
+              Delete the ACE identified by the string matching the subject value.
+            required: false
+            example: |
+              DELETE /myamacl?subject="de305d54-75b4-431b-adb2-eb6b9e546014"
+    responses:
+      200:
+        description: The ACE instance or the the entire AMACL resource has been successfully deleted.
+      400:
+        description: The request is invalid.

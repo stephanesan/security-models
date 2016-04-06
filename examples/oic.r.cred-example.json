@@ -12,6 +12,7 @@
         }
       },
       "credtype": 32,
+      "credusage": "my hint",
       "publicdata": {
         "encoding": "oic.sec.encoding.base64",
         "data": "BASE-64-ENCODED-VALUE"
@@ -45,6 +46,7 @@
         }
       },
       "credtype": 1,
+      "credusage": "my hint",
       "publicdata": {
         "encoding": "oic.sec.encoding.base64",
         "data": "BASE-64-ENCODED-VALUE"
