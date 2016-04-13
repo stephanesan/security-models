@@ -29,6 +29,10 @@
           "description": "Representation of this credential's type",
           "$ref": "oic.sec.credtype.json#/definitions/oic.sec.credtype/properties/bitmask"
         },
+        "credusage": {
+          "type": "string",
+          "description": "A string that provides hints about how/where the cred is used",
+        },
         "publicdata":   {
           "type": "object",
           "description": "Public credential information",
