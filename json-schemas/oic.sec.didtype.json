@@ -23,7 +23,7 @@
         }
       }
     },
-    "oic.sec.hostid": {
+    "oic.sec.host": {
       "type": "object",
       "description": "Identifier format used to denote resource owners",
       "properties": {
