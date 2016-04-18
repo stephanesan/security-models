@@ -41,5 +41,5 @@
   },
   "type": "object",
   "$ref": "#/definitions/oic.sec.svc",
-  "required": [ "svcid", "svcs", "sct", "scid", "ccid", "rowner" ]
+  "required": [ "svcid", "svcs", "sct", "scid", "ccid" ]
 }

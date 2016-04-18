@@ -57,7 +57,7 @@
             },
             {
               "type": "object",
-              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.hostid"
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.host"
             }
           ]
         }

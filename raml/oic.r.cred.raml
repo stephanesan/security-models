@@ -59,7 +59,7 @@ traits:
                   {
                     "credid": 55,
                     "subjectuuid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
-                    "subjectid": {
+                    "subject": {
                       "idt": "0",
                       "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
                     },
@@ -138,7 +138,7 @@ traits:
               {
                 "credid": 55,
                 "subjectuuid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
-                "subjectid": {
+                "subject": {
                   "idt": "0",
                   "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
                 },
@@ -221,7 +221,7 @@ traits:
               {
                 "credid": 55,
                 "subjectuuid": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9",
-                "subjectid": {
+                "subject": {
                   "idt": "0",
                   "id": "e61c3e6b-9c54-4b81-8ce5-f9039c1d04d9"
                 },
@@ -270,10 +270,10 @@ traits:
         subject:
           type: string
           description: |
-            Delete the credential identified by the string containing subjectID.
+            Delete the credential identified by the string containing subject id.
             required: false
             example: |
-              DELETE /mycred?subjectid="de305d54-75b4-431b-adb2-eb6b9e546014"
+              DELETE /mycred?subject="de305d54-75b4-431b-adb2-eb6b9e546014"
       responses:
         204:
           description: The credential instance or the the entire credential resource has been successfully deleted.

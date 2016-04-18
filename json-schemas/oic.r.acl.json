@@ -25,7 +25,7 @@
             },
             {
               "type": "object",
-              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.hostid",
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.host",
               "description": "Resource owner indicated in the form of a device id"
             }
           ]
