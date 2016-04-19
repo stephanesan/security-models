@@ -4,6 +4,7 @@
   "title": "Security Roles Types",
   "definitions": {
     "oic.sec.roletype": {
+      "type": "object",
       "description": "Security roles specified as an <Authority> & <Rolename>. A NULL <Authority> refers to the local entity or device.",
       "properties": {
         "authority": {
