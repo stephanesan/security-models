@@ -31,7 +31,7 @@
         },
         "credusage": {
           "type": "string",
-          "description": "A string that provides hints about how/where the cred is used",
+          "description": "A string that provides hints about how/where the cred is used"
         },
         "publicdata":   {
           "type": "object",
