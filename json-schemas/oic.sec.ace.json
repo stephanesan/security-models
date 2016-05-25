@@ -4,21 +4,21 @@
   "title": "Subject based Access Control Entry (ACE) object definition",
   "definitions": {
     "time-interval": {
-      "type": "array",
-      "description": "The time-interval is a array of objects where each object is a tuple of period and recurrence",
-      "items": [
-        {
+      "type": "object",
+      "description": "The time-interval is an object where each object contains a period and recurrence",
+      "properties": {
+        "period": {
           "type": "string",
           "description": "String represents a period using the RFC5545 Period"
         },
-        {
+        "recurrence": {
           "type": "array",
           "description": "String array represents a recurrence rule using the RFC5545 Recurrence",
           "items": {
             "type": "string"
           }
         }
-      ]
+      }
     },
     "oic.sec.acebase": {
       "type": "object",
@@ -35,6 +35,7 @@
         },
         "validity": {
           "type": "array",
+          "description": "validity is an array of time-interval objects",
           "items": {
             "$ref": "#/definitions/time-interval"
           }
