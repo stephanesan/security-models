@@ -41,12 +41,12 @@
         "privatedata":   {
           "type": "object",
           "description": "Private credential information",
-          "items": {"$ref": "oic.sec.privdatatype.json"}
+          "$ref": "oic.sec.privdatatype.json"
         },
         "optionaldata":   {
           "type": "object",
           "description": "Credential revocation status information",
-          "items": {"$ref": "oic.sec.optdatatype.json"}
+          "$ref": "oic.sec.optdatatype.json"
         },
         "period":   {
           "type": "string",

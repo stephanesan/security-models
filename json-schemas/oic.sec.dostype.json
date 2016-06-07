@@ -16,9 +16,11 @@
                             "2 - RFPRO - Ready for device provisioning state",
                             "3 - RFNOP - Ready for device normal operation state" ]
         },
-        "p": "boolean",
-        "default": true,
-        "description": "'p' is TRUE when the 's' state is pending until all necessary changes to device resources are complete."
+        "p": {
+          "type": "boolean",
+          "default": true,
+          "description": "'p' is TRUE when the 's' state is pending until all necessary changes to device resources are complete."
+        }
       }
     }
   },
