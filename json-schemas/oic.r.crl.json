@@ -23,6 +23,7 @@
   },
   "type": "object",
   "allOf": [
+    { "$ref": "oic.core.json" },
     { "$ref": "#/definitions/oic.r.crl" }
   ],
   "required": ["crlid","thisupdate", "crldata"]

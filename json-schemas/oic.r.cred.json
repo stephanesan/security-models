@@ -27,6 +27,7 @@
   },
   "type": "object",
   "allOf": [
+    { "$ref": "oic.core.json" },
     { "$ref": "#/definitions/oic.r.cred" }
   ],
   "required": [ "creds", "rowneruuid" ]

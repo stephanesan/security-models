@@ -30,6 +30,7 @@
   },
   "type": "object",
   "allOf": [
+    { "$ref": "oic.core.json" },
     { "$ref": "#/definitions/oic.r.sacl" }
   ],
   "required": ["aclist", "signature", "amsuuid"],

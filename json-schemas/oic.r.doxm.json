@@ -75,6 +75,7 @@
   },
   "type": "object",
   "allOf": [
+    { "$ref": "oic.core.json" },
     { "$ref": "#/definitions/oic.r.doxm" }
   ],
   "required": [ "oxms", "oxmsel", "sct", "owned", "deviceuuid", "devowneruuid", "rowneruuid" ]
