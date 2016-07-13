@@ -8,7 +8,7 @@
       "properties": {
         "oxms":  {
           "type": "array",
-          "description": "List of supported owner transfer methods",
+          "description": "ReadOnly, List of supported owner transfer methods",
           "items": {
             "$ref": "oic.sec.doxmtype.json#/definitions/oic.sec.doxmtype/properties/oxm"
           }
@@ -18,7 +18,7 @@
           "$ref": "oic.sec.doxmtype.json#/definitions/oic.sec.doxmtype/properties/oxm"
         },
         "sct": {
-          "description": "Bitmask encoding of supported credential types",
+          "description": "ReadOnly, Bitmask encoding of supported credential types",
           "$ref": "oic.sec.credtype.json#/definitions/oic.sec.credtype/properties/bitmask"
         },
         "owned":   {
@@ -26,6 +26,7 @@
           "description": "Ownership status flag"
         },
         "deviceuuid": {
+          "description": "ReadOnly, The uuid formatted identity of the device",
           "type": "string",
           "format": "uuid"
         },
