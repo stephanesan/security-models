@@ -16,22 +16,18 @@
           "description": "true indicates device is operational"
         },
         "cm":   {
-          "type": "object",
           "description": "Current device provisioning mode",
           "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
         },
         "tm": {
-          "type": "object",
           "description": "Target device provisioning mode",
           "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
         },
         "om": {
-          "type": "object",
           "description": "Current operational mode",
           "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
         "sm": {
-          "type": "object",
           "description": "Supported operational modes",
           "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },

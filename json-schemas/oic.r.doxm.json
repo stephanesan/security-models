@@ -14,12 +14,10 @@
           }
         },
         "oxmsel":   {
-          "type": "integer",
           "description": "The selected owner transfer method used during on-boarding",
           "$ref": "oic.sec.doxmtype.json#/definitions/oic.sec.doxmtype/properties/oxm"
         },
         "sct": {
-          "type": "object",
           "description": "Bitmask encoding of supported credential types",
           "$ref": "oic.sec.credtype.json#/definitions/oic.sec.credtype/properties/bitmask"
         },
