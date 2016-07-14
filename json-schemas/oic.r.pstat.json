@@ -28,23 +28,26 @@
           "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
         "sm": {
-          "description": "Supported operational modes",
+          "description": "ReadOnly, Supported operational modes",
           "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
         },
         "deviceuuid": {
+          "description": "ReadOnly, Identity of the device",
           "type": "string",
           "format": "uuid"
         },
         "deviceid":   {
           "type": "object",
-          "description": "The device to which the status applies. NULL refers to this device.",
+          "description": "ReadOnly, The device to which the status applies. NULL refers to this device.",
           "$ref": "oic.sec.didtype.json"
         },
         "rowneruuid": {
+          "description": "ReadOnly, The UUID formatted identity of the Resource owner",
           "type": "string",
           "format": "uuid"
         },
         "rowner": {
+          "description": "ReadOnly, The Resource Owner in terms of either a service or host",
           "anyOf": [
             {
               "type": "object",
