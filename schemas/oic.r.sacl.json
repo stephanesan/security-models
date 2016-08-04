@@ -1,0 +1,38 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.sacl.json#",
+  "title": "Signed Access Control List information",
+  "definitions": {
+    "oic.r.sacl": {
+      "type": "object",
+      "properties": {
+        "aclist":  {
+          "type": "object",
+          "description": "Access Control Entries in the Acl resource",
+          "$ref": "oic.sec.ace.json"
+        },
+        "signature":   {
+          "type": "object",
+          "description": "The signature over the ACL resource",
+          "$ref": "oic.sec.sigtype.json"
+        },
+        "amsuuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ams":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
+          "$ref": "oic.sec.svctype.json"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "oic.core.json" },
+    { "$ref": "#/definitions/oic.r.sacl" }
+  ],
+  "required": ["aclist", "signature", "amsuuid"],
+  "additionalItems": false
+}

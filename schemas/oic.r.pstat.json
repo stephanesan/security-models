@@ -1,0 +1,77 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.pstat.json#",
+  "title": "Device Provisioning Status information",
+  "definitions": {
+    "oic.r.pstat": {
+      "type": "object",
+      "properties": {
+        "dos": {
+          "type": "object",
+          "description": "Device on-boarding state",
+          "$ref": "oic.sec.dostype.json"
+        },
+        "isop":  {
+          "type": "boolean",
+          "description": "true indicates device is operational"
+        },
+        "cm":   {
+          "description": "Current device provisioning mode",
+          "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
+        },
+        "tm": {
+          "description": "Target device provisioning mode",
+          "$ref": "oic.sec.dpmtype.json#/definitions/oic.sec.dpmtype/properties/bitmask"
+        },
+        "om": {
+          "description": "Current operational mode",
+          "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
+        },
+        "sm": {
+          "readOnly": true,
+          "description": "ReadOnly, Supported operational modes",
+          "$ref": "oic.sec.pomtype.json#/definitions/oic.sec.pomtype/properties/bitmask"
+        },
+        "deviceuuid": {
+          "readOnly": true,
+          "description": "ReadOnly, Identity of the device",
+          "type": "string",
+          "format": "uuid"
+        },
+        "deviceid":   {
+          "type": "object",
+          "readOnly": true,
+          "description": "ReadOnly, The device to which the status applies. NULL refers to this device.",
+          "$ref": "oic.sec.didtype.json"
+        },
+        "rowneruuid": {
+          "readOnly": true,
+          "description": "ReadOnly, The UUID formatted identity of the Resource owner",
+          "type": "string",
+          "format": "uuid"
+        },
+        "rowner": {
+          "readOnly": true,
+          "description": "ReadOnly, The Resource Owner in terms of either a service or host",
+          "anyOf": [
+            {
+              "type": "object",
+              "description": "Entries in /oic/sec/svc resource that own this resource",
+              "$ref": "oic.sec.svctype.json"
+            },
+            {
+              "type": "object",
+              "$ref": "oic.sec.didtype.json#/definitions/oic.sec.host"
+            }
+          ]
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "oic.core.json" },
+    { "$ref": "#/definitions/oic.r.pstat" }
+  ],
+  "required": [ "isop", "cm", "om", "sm", "deviceuuid", "rowneruuid" ]
+}

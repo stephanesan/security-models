@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.amacl.json#",
+  "title": "Managed Access Control information",
+  "definitions": {
+    "oic.r.amacl": {
+      "type": "object",
+      "properties": {
+        "resources": {
+          "type": "array",
+          "description": "Multiple links to this host's resources",
+          "items": { "$ref": "oic.oic-link.json" }
+        },
+        "amsuuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "ams":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
+          "$ref": "oic.sec.svctype.json"
+        },
+        "rowneruuid": {
+          "type": "string",
+          "format": "uuid"
+        },
+        "rowner":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that own this resource",
+          "$ref": "oic.sec.svctype.json"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+    { "$ref": "oic.core.json" },
+    { "$ref": "#/definitions/oic.r.amacl" }
+  ],
+  "required": [ "resources", "amsuuid", "rowneruuid"]
+}

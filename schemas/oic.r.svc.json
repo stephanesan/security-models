@@ -1,0 +1,30 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.svc.json#",
+  "title": "Device Services information",
+  "definitions": {
+    "oic.r.svc": {
+      "type": "object",
+      "properties": {
+        "hosts": {
+          "type": "array",
+          "description": "List of trusted service providers",
+          "items": {
+            "$ref": "oic.sec.svc.json"
+          }
+        },
+        "rowner":   {
+          "type": "object",
+          "description": "Entries in oic.sec.svc resource that own this resource",
+          "$ref": "oic.sec.svctype.json"
+        }
+      }
+    }
+  },
+  "type": "object",
+  "allOf": [
+      { "$ref": "oic.core.json" },
+      { "$ref": "#/definitions/oic.r.svc" }
+  ],
+  "required": [ "hosts", "rowner" ]
+}
