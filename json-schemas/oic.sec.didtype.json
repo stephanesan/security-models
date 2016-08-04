@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.didtype.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.sec.didtype.json#",
   "title": "Device Identifier Format type",
   "definitions": {
     "oic.sec.didtype": {

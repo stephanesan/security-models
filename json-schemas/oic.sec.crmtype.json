@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.crmtype.json",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.sec.crmtype.json",
   "title": "Credential Refresh Methods",
   "definitions": {
     "oic.sec.crmtype": {

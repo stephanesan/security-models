@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.r.sacl.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.sacl.json#",
   "title": "Signed Access Control List information",
   "definitions": {
     "oic.r.sacl": {

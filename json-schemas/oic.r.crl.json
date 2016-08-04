@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.r.crl.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.crl.json#",
   "title": "Certificate Revocation List information",
   "definitions": {
     "oic.r.crl": {

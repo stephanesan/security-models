@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.r.svc.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.svc.json#",
   "title": "Device Services information",
   "definitions": {
     "oic.r.svc": {

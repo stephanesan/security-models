@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.r.doxm.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.doxm.json#",
   "title": "Device Owner Transfer Method information",
   "definitions": {
     "oic.r.doxm": {

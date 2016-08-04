@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.svc.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.sec.svc.json#",
   "title": "Trusted service providers information",
   "definitions": {
     "oic.sec.svc": {

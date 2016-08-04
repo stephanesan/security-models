@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.ace.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.sec.ace.json#",
   "title": "Subject based Access Control Entry (ACE) object definition",
   "definitions": {
     "time-interval": {

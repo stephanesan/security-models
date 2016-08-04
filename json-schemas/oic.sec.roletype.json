@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.sec.roletype.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.sec.roletype.json#",
   "title": "Security Roles Types",
   "definitions": {
     "oic.sec.roletype": {

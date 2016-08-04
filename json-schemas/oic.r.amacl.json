@@ -1,6 +1,6 @@
 {
   "$schema": "http://json-schema.org/draft-04/schema#",
-  "id": "http://openinterconnect.org/schemas/oic.r.amacl.json#",
+  "id": "https://www.openconnectivity.org/ocf-apis/security/schemas/oic.r.amacl.json#",
   "title": "Managed Access Control information",
   "definitions": {
     "oic.r.amacl": {
