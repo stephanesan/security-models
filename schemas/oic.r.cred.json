@@ -14,8 +14,7 @@
           }
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner": {
           "type": "object",

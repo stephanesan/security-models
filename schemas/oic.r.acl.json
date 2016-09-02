@@ -12,8 +12,7 @@
           "$ref": "oic.sec.ace.json"
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid",
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid",
           "description": "The value identifies the unique resource owner"
         },
         "rowner": {

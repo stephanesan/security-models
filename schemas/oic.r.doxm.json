@@ -30,8 +30,7 @@
         "deviceuuid": {
           "readOnly": true,
           "description": "ReadOnly, The uuid formatted identity of the device",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "deviceid":   {
           "type": "object",
@@ -39,8 +38,7 @@
           "$ref": "oic.sec.didtype.json"
         },
         "devowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "devowner":   {
           "anyOf": [
@@ -56,8 +54,7 @@
           ]
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner": {
           "anyOf": [

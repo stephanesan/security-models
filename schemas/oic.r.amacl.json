@@ -12,8 +12,7 @@
           "items": { "$ref": "oic.oic-link.json" }
         },
         "amsuuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "ams":   {
           "type": "object",
@@ -21,8 +20,7 @@
           "$ref": "oic.sec.svctype.json"
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner":   {
           "type": "object",

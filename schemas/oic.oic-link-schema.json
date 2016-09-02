@@ -82,8 +82,7 @@
               "description": "Any unique string including a URI"
             },
             {
-              "type": "string",
-              "format": "uuid",
+              "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid",
               "description": "Use UUID for universal uniqueness - used in /oic/res to identify the device"
             }
           ],
