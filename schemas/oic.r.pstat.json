@@ -70,7 +70,7 @@
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.pstat" }
   ],
   "required": [ "isop", "cm", "om", "sm", "deviceuuid", "rowneruuid" ]
