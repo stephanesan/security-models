@@ -26,7 +26,7 @@
         "resources": {
           "type": "array",
           "description": "References the application's resources to which a security policy applies",
-          "items": { "$ref": "oic.oic-link-schema.json" }
+          "items": { "$ref": "../../core/schemas/oic.oic-link-schema.json#/definitions/oic.oic-link" }
         },
         "permission": {
           "type": "integer",
