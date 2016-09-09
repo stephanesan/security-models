@@ -35,8 +35,7 @@
         "deviceuuid": {
           "readOnly": true,
           "description": "ReadOnly, Identity of the device",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "deviceid":   {
           "type": "object",
@@ -47,8 +46,7 @@
         "rowneruuid": {
           "readOnly": true,
           "description": "ReadOnly, The UUID formatted identity of the Resource owner",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner": {
           "readOnly": true,

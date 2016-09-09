@@ -15,9 +15,8 @@
         "id": {
           "oneOf": [
             {
-              "type": "string",
-              "format": "uuid",
-              "description": "A UUID value"
+              "description": "A UUID value",
+              "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
             }
           ]
         }
