@@ -34,7 +34,7 @@
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.acl" }
   ],
   "required": [ "aclist","rowneruuid" ]
