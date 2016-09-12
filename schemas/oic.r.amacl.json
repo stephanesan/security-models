@@ -9,32 +9,30 @@
         "resources": {
           "type": "array",
           "description": "Multiple links to this host's resources",
-          "items": { "$ref": "oic.oic-link.json" }
+          "items": { "$ref": "../../core/schemas/oic.oic-link-schema.json#/definitions/oic.oic-link" }
         },
         "amsuuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "ams":   {
           "type": "object",
           "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
-          "$ref": "oic.sec.svctype.json"
+          "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner":   {
           "type": "object",
           "description": "Entries in oic.sec.svc resource that own this resource",
-          "$ref": "oic.sec.svctype.json"
+          "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
         }
       }
     }
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.amacl" }
   ],
   "required": [ "resources", "amsuuid", "rowneruuid"]

@@ -16,14 +16,14 @@
         "rowner":   {
           "type": "object",
           "description": "Entries in oic.sec.svc resource that own this resource",
-          "$ref": "oic.sec.svctype.json"
+          "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
         }
       }
     }
   },
   "type": "object",
   "allOf": [
-      { "$ref": "oic.core.json" },
+      { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
       { "$ref": "#/definitions/oic.r.svc" }
   ],
   "required": [ "hosts", "rowner" ]

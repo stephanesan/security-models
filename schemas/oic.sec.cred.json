@@ -11,8 +11,7 @@
           "description": "Local reference to a credential resource"
         },
         "subjectuuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "subject": {
           "type": "object",
@@ -22,7 +21,7 @@
         "roleid": {
           "type": "object",
           "description": "The roles this credential possesses",
-          "$ref": "oic.sec.roletype.json"
+          "$ref": "oic.sec.roletype.json#/definitions/oic.sec.roletype"
         },
         "credtype": {
           "type": "integer",

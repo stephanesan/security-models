@@ -30,8 +30,7 @@
         "deviceuuid": {
           "readOnly": true,
           "description": "ReadOnly, The uuid formatted identity of the device",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "deviceid":   {
           "type": "object",
@@ -39,15 +38,14 @@
           "$ref": "oic.sec.didtype.json#/definitions/oic.sec.didtype"
         },
         "devowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "devowner":   {
           "anyOf": [
             {
               "type": "object",
               "description": "Entries in oic.sec.svc resource that own this resource",
-              "$ref": "oic.sec.svctype.json"
+              "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
             },
             {
               "type": "object",
@@ -56,15 +54,14 @@
           ]
         },
         "rowneruuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner": {
           "anyOf": [
             {
               "type": "object",
               "description": "Entries in oic.sec.svc resource that own this resource",
-              "$ref": "oic.sec.svctype.json"
+              "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
             },
             {
               "type": "object",
@@ -77,7 +74,7 @@
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.doxm" }
   ],
   "required": [ "oxms", "oxmsel", "sct", "owned", "deviceuuid", "devowneruuid", "rowneruuid" ]

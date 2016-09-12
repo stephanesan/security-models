@@ -35,8 +35,7 @@
         "deviceuuid": {
           "readOnly": true,
           "description": "ReadOnly, Identity of the device",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "deviceid":   {
           "type": "object",
@@ -47,8 +46,7 @@
         "rowneruuid": {
           "readOnly": true,
           "description": "ReadOnly, The UUID formatted identity of the Resource owner",
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "rowner": {
           "readOnly": true,
@@ -57,7 +55,7 @@
             {
               "type": "object",
               "description": "Entries in /oic/sec/svc resource that own this resource",
-              "$ref": "oic.sec.svctype.json"
+              "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
             },
             {
               "type": "object",
@@ -70,7 +68,7 @@
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.pstat" }
   ],
   "required": [ "isop", "cm", "om", "sm", "deviceuuid", "rowneruuid" ]

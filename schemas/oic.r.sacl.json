@@ -9,7 +9,7 @@
         "aclist":  {
           "type": "object",
           "description": "Access Control Entries in the Acl resource",
-          "$ref": "oic.sec.ace.json"
+          "$ref": "oic.sec.ace.json#/definitions/oic.sec.ace"
         },
         "signature":   {
           "type": "object",
@@ -17,20 +17,19 @@
           "$ref": "oic.sec.sigtype.json#/definitions/oic.sec.sigtype"
         },
         "amsuuid": {
-          "type": "string",
-          "format": "uuid"
+          "$ref": "../../core/schemas/oic.types-schema.json#/definitions/uuid"
         },
         "ams":   {
           "type": "object",
           "description": "Entries in oic.sec.svc resource that manage access for the specified resource",
-          "$ref": "oic.sec.svctype.json"
+          "$ref": "oic.sec.svctype.json#/definitions/oic.sec.svctype"
         }
       }
     }
   },
   "type": "object",
   "allOf": [
-    { "$ref": "oic.core.json" },
+    { "$ref": "../../core/schemas/oic.core-schema.json#/definitions/oic.core" },
     { "$ref": "#/definitions/oic.r.sacl" }
   ],
   "required": ["aclist", "signature", "amsuuid"],
